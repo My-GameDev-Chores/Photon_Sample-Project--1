@@ -24,15 +24,15 @@
 
 * Real-time player synchronization  
 * Multiplayer lobby and room system  
-* Voice chat integration  
+* Voice chat integration using Photon Voice  
 
 ---
 
 ## 🚀 Features
 
 * Multiplayer gameplay  
-* Live player movement sync  
-* Voice communication system  
+* Live player movement synchronization  
+* In-game voice communication  
 
 ---
 
