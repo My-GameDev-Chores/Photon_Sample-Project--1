@@ -4,6 +4,14 @@
 
 ---
 
+## 🎥 Gameplay
+
+<p align="center">
+  <img src="./media/gameplay.gif" width="700"/>
+</p>
+
+---
+
 ## 📸 Preview
 
 <p align="center">
@@ -14,17 +22,17 @@
 
 ## 🧠 What I Built
 
-* Real-time player synchronization
-* Multiplayer lobby and room system
-* Voice chat integration
+* Real-time player synchronization  
+* Multiplayer lobby and room system  
+* Voice chat integration  
 
 ---
 
 ## 🚀 Features
 
-* Multiplayer gameplay
-* Live player movement sync
-* Voice communication system
+* Multiplayer gameplay  
+* Live player movement sync  
+* Voice communication system  
 
 ---
 
@@ -39,8 +47,8 @@
 
 ## ▶️ How to Run
 
-1. Clone repository
-2. Open in Unity
-3. Press Play
+1. Clone repository  
+2. Open in Unity  
+3. Press Play  
 
 ---
