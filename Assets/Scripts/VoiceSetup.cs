@@ -12,14 +12,11 @@ public class VoiceSetup : MonoBehaviourPun
 
         if (photonView.IsMine)
         {
-            // Local player - enable voice after delay
             Invoke(nameof(EnableVoice), 2.0f);
         }
         else
         {
-            // Remote player - disable recorder (only need speaker)
-            if (recorder != null)
-                recorder.enabled = false;
+            if (recorder != null) recorder.enabled = false;
         }
     }
 
@@ -27,14 +24,27 @@ public class VoiceSetup : MonoBehaviourPun
     {
         if (recorder != null)
         {
-            recorder.TransmitEnabled = true;
-            Debug.Log("Voice enabled for local player");
+            recorder.TransmitEnabled = false;
+        }
+    }
+
+    private void Update()
+    {
+        if (!photonView.IsMine || recorder == null) return;
+        if (UIManager.Instance == null || UIManager.Instance.muteToggle == null) return;
+
+        // Push-to-Talk: Hold V to speak (only when not muted)
+        recorder.TransmitEnabled = Input.GetKey(KeyCode.V) && !UIManager.Instance.muteToggle.isOn;
+
+        // M key toggles the UI toggle
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            UIManager.Instance.muteToggle.isOn = !UIManager.Instance.muteToggle.isOn;
         }
     }
 
     private void OnDestroy()
     {
-        // Cleanup
         if (recorder != null && recorder.TransmitEnabled)
         {
             recorder.TransmitEnabled = false;
